@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using TaskManagement.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+// Configure Entity Framework Core with SQL Server
+builder.Services.AddDbContext<TaskDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configure Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
