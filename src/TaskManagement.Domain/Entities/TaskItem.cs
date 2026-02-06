@@ -16,16 +16,12 @@ public class TaskItem
 
     public DateTime? DueDate { get; set; }
 
-    [Required]
     public Priority Priority { get; set; }
 
-    [Required]
     public Status Status { get; set; }
 
-    [Required]
     public DateTime CreatedAt { get; set; }
 
-    [Required]
     public DateTime UpdatedAt { get; set; }
 }
 
